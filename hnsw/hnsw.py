@@ -17,6 +17,7 @@ class HNSW():
         self.M = 10
         self.M0 = 100
         self.nodes = []
+ㅉ
     def insert(self, query_name, query_vec):
         if self.enter_point is None:
             node_level = self._draw_level()  # new element level, also top layer of the graph
@@ -156,13 +157,12 @@ class HNSW():
         return 0
 
 
-
 if __name__ == "__main__":
     import time
 
     h = HNSW()
     temp = []
-    n_items = 50000
+    n_items = 11
     c = time.time()
     for i in range(n_items):
         v = np.random.random(size=(100, ))
@@ -173,7 +173,8 @@ if __name__ == "__main__":
     c = time.time()
     for i in range(1000):
         v = np.random.random(size=(100, ))
-        h.most_similar(v, 10)[:10]
+        q = h.most_similar(v, 10)[:10]
+        print(len(q))
     print("time to search 1000 elements with hnsw :", time.time() - c)
     c = time.time()
 

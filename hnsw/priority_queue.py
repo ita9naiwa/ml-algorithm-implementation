@@ -33,7 +33,7 @@ class priority_queue():
         return len(self.set)
 
     def as_set(self):
-        return copy.copy(self.set)
+        return copy.deepcopy(self.set)
 
     def as_list(self, _sorted=False):
         ret = copy.deepcopy(self.set)
@@ -42,14 +42,6 @@ class priority_queue():
         return ret
 
     def rebase(self, query_vec):
-        """
-        self.heap = []
-        for node in self.set:
-            dist = l2_dist(query_vec, node.vec)
-            if self.farthest is True:
-                dist = -dist
-            heapq.heappush(self.heap, (dist, node))
-        """
         ret_pq = priority_queue(query_vec, farthest=self.farthest)
         for node in self.set:
             ret_pq.append(node)

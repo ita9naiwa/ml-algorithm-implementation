@@ -26,4 +26,4 @@ class Node():
         return self.neighbors[layer]
 
     def clear_neighbors(self, layer):
-        self.neighbors[layer] = []
+        self.neighbors[layer] = set()
