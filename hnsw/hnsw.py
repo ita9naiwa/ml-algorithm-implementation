@@ -17,7 +17,7 @@ class HNSW():
         self.M = 10
         self.M0 = 100
         self.nodes = []
-ㅉ
+
     def insert(self, query_name, query_vec):
         if self.enter_point is None:
             node_level = self._draw_level()  # new element level, also top layer of the graph
